@@ -15,7 +15,10 @@ class CSVMotorDataReader(DataReaderPort):
 
     def __init__(self, file_path: Path):
         if not file_path.exists():
-            raise FileNotFoundError(f"Data file not found: {file_path}")
+            raise FileNotFoundError(
+                f"Data file not found: {file_path}\n"
+                "Run: uv run python -m scripts.download_dataset  (or `make data`)"
+            )
         self.file_path = file_path
 
     def read_measurements(self) -> Iterator[MotorMeasurement]:

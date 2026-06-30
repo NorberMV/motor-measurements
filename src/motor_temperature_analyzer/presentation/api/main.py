@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, Depends, Query
@@ -6,11 +5,7 @@ from fastapi import FastAPI, Depends, Query
 from motor_temperature_analyzer.infrastructure.adapters.csv_motor_data_reader import CSVMotorDataReader
 from motor_temperature_analyzer.presentation.schemas.motor_responses import MotorMeasurementResponse
 from motor_temperature_analyzer.application.use_cases.list_profiles import ListProfilesUseCase
-
 from motor_temperature_analyzer.utils import get_csv_path
-
-
-csv_path = get_csv_path()
 
 app = FastAPI()
 

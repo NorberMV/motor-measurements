@@ -1,14 +1,8 @@
-from pathlib import Path
 from motor_temperature_analyzer.infrastructure.adapters.csv_motor_data_reader import CSVMotorDataReader
+from motor_temperature_analyzer.utils import get_csv_path
 
 
-data_path = Path("data/measures.csv")
-# reader = CSVMotorDataReader(data_path)
-#
-# count = sum(1 for _ in reader.read_measurements())
-# print(f"Total measurements processed: {count}")
-
-# Show first few profile_ids
+data_path = get_csv_path()
 reader = CSVMotorDataReader(data_path)
 profile_ids = set()
 

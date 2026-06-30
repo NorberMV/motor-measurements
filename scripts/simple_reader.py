@@ -2,9 +2,10 @@ from pathlib import Path
 import csv
 
 from motor_temperature_analyzer.domain.entities.motor_measurements import MotorMeasurement
+from motor_temperature_analyzer.utils import get_csv_path
 
 
-data_path = Path(__file__).resolve().parent.parent / "data" / "measures.csv"
+data_path = get_csv_path()
 
 
 def read_csv(path: Path, limit: int = 6):

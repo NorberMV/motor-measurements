@@ -1,4 +1,23 @@
+# Python / env
 .env
 .env.*
-*.egg-info
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# IDE / OS
 .DS_Store
+.idea/
+.vscode/
+
+# Data - intentionally not committed (large ~300MB dataset)
+data/
+# Raw data files
+*.csv
+# Exception: keep example/requirements files if any were .csv (none here)
+!requirements*.txt
+!requirements*.in
