@@ -6,7 +6,9 @@ import kagglehub
 
 
 load_dotenv()
-os.environ["KAGGLE_API_TOKEN"] = os.getenv("KAGGLE_API_TOKEN")
+token = os.getenv("KAGGLE_API_TOKEN")
+if token:
+    os.environ["KAGGLE_API_TOKEN"] = token
 
 DATA_DIR = Path("data")
 TARGET = DATA_DIR / "measures.csv"
